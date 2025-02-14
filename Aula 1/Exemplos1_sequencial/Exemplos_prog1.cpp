@@ -49,7 +49,7 @@ int main()
     cout << "A área do retângulo é: " << area << endl;
 
     //system("pause");
-    //system("PAUSE>>null");
+    system("PAUSE>>null");
     
 	//Indica que o programa foi executado com sucesso, sem erros. 
 	//É o valor convencionalmente utilizado para indicar um término bem-sucedido
