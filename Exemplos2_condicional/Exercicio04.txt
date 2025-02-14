@@ -1,0 +1,27 @@
+/* Exercicio 4 - Condicional*/
+/*
+Desenvolva um programa que simule a compra de um 
+produto de uma loja. 
+
+Entrada:
+- O nome do produto (string).
+- A quantidade de produtos (inteiro).
+- O preço unitário do produto (float).
+
+Calcular o valor total do pedido: quantidade*preço unitário.
+
+Aplicar descontos:
+
+Quantidade      Desconto
+> 5 e <= 10       5%
+  > 10            10%
+  
+Exibir um resumo do pedido:
+
+Nome do produto.
+Quantidade de produtos.
+Preço unitário.
+Valor total (sem desconto).
+Percentual de desconto aplicado (se houver).
+Valor total com desconto (se houver).
+*/

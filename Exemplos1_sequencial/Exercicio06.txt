@@ -1,0 +1,12 @@
+/* Exercicio 6 - sequencial */
+
+/*
+Desenvolver um programa que realize a conversão de um valor em 
+Reais (R$) para Dólares Americanos (US$) e Euros (€). O programa deve 
+solicitar ao usuário o valor em Reais e, utilizando taxas de câmbio 
+predefinidas (para fins de demonstração), calcular e exibir os valores 
+correspondentes em Dólares e Euros.
+Considere :
+1 Dólar = 5.0 Reais
+1 Euro = 6.0 Reais
+*/
