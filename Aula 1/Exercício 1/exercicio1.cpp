@@ -18,5 +18,6 @@ int main(){
 	cout << "Dólar: US$ " << dolar << endl;
 	cout << "Euro: € " << euro << endl << endl;
 	system("Pause");
+	return 0;
 	
 }

@@ -15,7 +15,6 @@ int main()
     cout << "Digite um número : ";
     cin >> numero;
     
-    cout << fixed << setprecision;
     // Verifica se o resto da divisão de numero por 2 é igual a 0. 
 	// Se for, o número é par, senão é impar.
     if (numero % 2 == 0) {

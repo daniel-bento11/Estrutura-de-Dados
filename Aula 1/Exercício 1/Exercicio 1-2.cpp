@@ -25,4 +25,5 @@ int main(){
 	cout << "Euro: € " << euro << endl << endl;
 	
 	system("Pause");
+	return 0;
 }
