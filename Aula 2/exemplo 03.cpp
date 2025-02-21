@@ -20,13 +20,13 @@ int main (){
 	maior = vetor[0];
 	menor = vetor[0];
 	
-	for (int i=0; i<TAM;i++){
+	for (int i=1; i<TAM;i++){
 		if (vetor[i]>maior){
 			maior = vetor[i];
 		}
 	}
 	
-	for (int i = 0; i<TAM;i++){
+	for (int i = 1; i<TAM;i++){
 		if(vetor[i]<menor){
 			menor = vetor[i];
 		}
