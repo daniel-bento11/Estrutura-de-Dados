@@ -36,4 +36,6 @@ int main (){
 	}else {
 		cout << "Reprovado!" << endl;
 	}
+
+	return 0;
 }
