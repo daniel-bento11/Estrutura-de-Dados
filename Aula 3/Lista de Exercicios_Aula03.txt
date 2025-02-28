@@ -1,0 +1,99 @@
+#===================== Exercicios - Aula03 ======================#
+
+/*Exercício1_Aula03 - Calculadora simples com menu - Iteração
+
+1.Soma
+2.Subtração
+3.Multiplicação
+4.Divisão
+5.Sair
+
+O programa deve solicitar ao usuário a opção desejada. 
+
+Se o usuário escolher uma das operações aritméticas (1 a 4), 
+o programa deve solicitar dois números, realizar a operação 
+escolhida e exibir o resultado.
+O programa deve verificar o erro de divisão por zero na operação 
+de divisão, exibindo uma mensagem de erro.  
+*/
+
+#=================================================================
+
+/*Exercicio2_Aula03 - Pesquisa de satisfação com clientes de um 
+restaurante. 
+O programa deve realizar as seguintes ações:
+
+1.Entrada do número de clientes:
+Solicite ao usuário que digite o número de clientes que 
+participaram da pesquisa.
+O número de clientes deve ser um valor inteiro entre 1 e 10.
+Caso o usuário digite um valor inválido, exibir uma mensagem 
+de erro e solicitar a entrada novamente.
+
+2.Coleta das avaliações:
+Para cada cliente, solicite que ele avalie os seguintes aspectos do 
+restaurante, em uma escala de 1 a 5:
+  Qualidade da comida
+  Qualidade do atendimento
+  Qualidade do ambiente
+
+3.Cálculo das médias:
+Calcule a média das avaliações para cada um dos aspectos 
+(comida, atendimento e ambiente).
+Calcule a média geral de satisfação, que é a média das três 
+médias anteriores.
+
+4.Exibição dos resultados:
+Exiba os resultados da pesquisa, mostrando as médias de cada 
+aspecto e a média geral de satisfação, com duas casas decimais.
+
+5.Repetição da pesquisa:
+Pergunte ao usuário se ele deseja realizar outra pesquisa.
+ Se o usuário digitar 's' (sim), o programa deve executar 
+ novamente.
+ Se o usuário digitar 'n' (não), o programa deve encerrar.
+*/
+#=================================================================
+
+/*Exercício1_Aula03 - Sistema de controle de contas bancárias. 
+
+O programa deve permitir o gerenciamento de até 10 contas, 
+utilizando um array estático para armazenar os saldos das 
+contas. 
+O sistema deve oferecer as seguintes funcionalidades:
+
+1.Cadastro de Conta:
+Permitir o cadastro de novas contas.
+O programa deve verificar se o limite máximo de 10 contas 
+já foi atingido.
+Ao cadastrar uma nova conta, o saldo inicial deve ser 
+automaticamente definido como 0.0.
+Exibir mensagens informativas indicando o sucesso do cadastro 
+ou o limite de contas atingido.
+
+2.Depósito:
+Solicitar ao usuário o número da conta e o valor a ser depositado.
+Verificar se a conta informada existe.
+Atualizar o saldo da conta com o valor depositado.
+Exibir mensagens informativas indicando o sucesso do depósito 
+ou conta não encontrada.
+
+3.Saque:
+Solicitar ao usuário o número da conta e o valor a ser sacado.
+Verificar se a conta informada existe.
+Verificar se o saldo da conta é suficiente para o saque.
+Atualizar o saldo da conta com o valor sacado.
+Exibir mensagens informativas indicando o sucesso do saque,
+saldo insuficiente ou conta não encontrada.
+
+4.Consulta de Saldos:
+Solicitar ao usuário o número da conta a ser consultada.
+Permitir a consulta do saldo de uma conta específica ou de 
+todas as contas.
+Se o usuário digitar -1, o programa deve exibir o saldo de 
+todas as contas.
+Se o usuário digitar um número de conta válido, o programa 
+deve exibir o saldo da conta correspondente.
+Exibir mensagens informativas indicando o saldo da conta ou 
+conta não encontrada.
+*/
