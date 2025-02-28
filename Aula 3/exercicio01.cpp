@@ -58,6 +58,8 @@ int main(){
 		cout << "Qual o segundo valor: ";
 		cin >> n2;
 		
+		cout << fixed << setprecision(2);
+		
 		switch(resp){
 			case 1:
 				resultado = somar(n1,n2);
