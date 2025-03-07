@@ -25,11 +25,24 @@ int main(){
 		cout << "Pesquisa de Satisfação" << endl << endl;
 		
 		cout << "Informe o número de clientes (1-10): ";
-		cin >> n_clientes; 
+		cin >> n_clientes;
+		
+		if (n_clientes==-1){
+			break;
+		}
+		
+		if(cin.fail()){
+			system("cls");
+			cout << "Apenas Números (Não aceita caractere)!" << endl;
+			cin.clear();
+			cin.ignore(100,'\n');
+			system("pause");
+			continue;
+		}
 		
 		if(n_clientes<1 or n_clientes>10){
 			system("cls");
-			cout << "Opção Inválida!" << endl;
+			cout << "Opção Inválida (1-10)!" << endl;
 			cin.clear();
 			cin.get();
 			system("pause");
@@ -46,10 +59,18 @@ int main(){
 			while(true){
 				cout << "Qualidade da Comida (1-5): ";
 				cin >> qld_comida[i];
-				if (qld_comida[i]<1 or qld_comida[i]>5){
-					cout << "Opção Inválida!" << endl;
+				
+				if (cin.fail()){
+					cout << "Apenas Números (Não aceita caractere)!" << endl;
 					cin.clear();
-					cin.get();
+					cin.ignore(100,'\n');
+					system("pause");
+					system("cls");
+					continue;
+				}
+				
+				if (qld_comida[i]<1 or qld_comida[i]>5){
+					cout << "Opção Inválida (1-5)!" << endl;
 					system("pause");
 					system("cls");
 					continue;
@@ -59,10 +80,18 @@ int main(){
 			while(true){
 				cout << "Qualidade do Atendimento (1-5): ";
 				cin >> qld_atendimento[i];
+				
+				if (cin.fail()){
+					cout << "Apenas Números (Não aceita caractere)!" << endl;
+					cin.clear();
+					cin.ignore(100,'\n');
+					system("pause");
+					system("cls");
+					continue;
+				}				
+				
 				if (qld_atendimento[i]<1 or qld_atendimento[i]>5){
 					cout << "Opção Inválida!" << endl;
-					cin.clear();
-					cin.get();
 					system("pause");
 					system("cls");
 					continue;
@@ -72,10 +101,18 @@ int main(){
 			while(true){
 				cout << "Qualidade do Ambiente (1-5): ";
 				cin >> qld_ambiente[i];
+				
+				if (cin.fail()){
+					cout << "Apenas Números (Não aceita caractere)!" << endl;
+					cin.clear();
+					cin.ignore(100,'\n');
+					system("pause");
+					system("cls");
+					continue;
+				}
+				
 				if (qld_ambiente[i]<1 or qld_ambiente[i]>5){
 					cout << "Opção Inválida!" << endl;
-					cin.clear();
-					cin.get();
 					system("pause");
 					system("cls");
 					continue;
@@ -86,28 +123,27 @@ int main(){
 		
 		cout << fixed << setprecision(2);
 		
+		double mediaComida = calcular_media(qld_comida, n_clientes);
+		double mediaAtendimento = calcular_media(qld_atendimento, n_clientes);
+		double mediaAmbiente = calcular_media(qld_ambiente, n_clientes);
+		double mediaGeral = (mediaComida+mediaAtendimento+mediaAmbiente)/3;
+		 
 		system("cls");
-		cout << "Média Comida: " << calcular_media(qld_comida, n_clientes) << endl;
-		cout << "Média Atendimento: " << calcular_media(qld_atendimento, n_clientes) << endl;
-		cout << "Média Ambiente: " << calcular_media(qld_ambiente, n_clientes) << endl;
+		cout << "Média Comida: " << mediaComida << endl;
+		cout << "Média Atendimento: " << mediaAtendimento << endl;
+		cout << "Média Ambiente: " << mediaAmbiente << endl;
 		system("pause");
-		cout << "\nMédia Geral: " << (calcular_media(qld_comida, n_clientes)+calcular_media(qld_atendimento, n_clientes)+calcular_media(qld_ambiente, n_clientes))/3 << endl;
+		cout << "\nMédia Geral: " << mediaGeral << endl;
 		system("pause");
 		
-		string resp;
+		char resp;
 		
 		while(true){
 			system("cls");
 			cout << "Deseja realizar outra pesquisa? (s/n)" << endl;
 			cin >> resp;
-			if (resp == "s"){
+			if (tolower(resp) == 's' or tolower(resp) == 'n'){
 				break;
-			}
-			else if(resp == "n"){
-				system("cls");
-				cout << "Adeus!" << endl;
-				system("pause");
-				return 0; 
 			}else{
 				system("cls");
 				cout << "Opção Inválida!" << endl;
@@ -116,6 +152,14 @@ int main(){
 			}
 		}
 		
+		if (tolower(resp)=='n'){
+			break;
+		}
+		
 	}while (true);
-
+	
+	system("cls");
+	cout << "Adeus!" << endl;
+	system("pause");
+	return 0; 
 }
