@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <Windows.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -38,7 +39,7 @@ int main()
     cout << "\nMatriz digitada:" << endl;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            cout << matriz[i][j] << " ";
+            cout << setw(4) << matriz[i][j] << " ";
         }
         cout << endl;
     }
