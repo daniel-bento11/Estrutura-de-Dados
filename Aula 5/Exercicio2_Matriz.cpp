@@ -32,3 +32,75 @@ O (char) é um "cast", ou seja, uma conversão de tipo. Ele pega o resultado
 da soma (que é um número inteiro) e o converte de volta para um caractere.
 */
 
+#include <iostream>
+#include <Windows.h>
+#include <iomanip>
+#define filiais 3
+#define produtos 4
+
+using namespace std;
+
+void exibir_cabecalho(){
+	system("cls");
+	cout << "Controle de Estoque de uma Loja" << endl << endl;
+}
+
+int main() 
+{
+	int matriz[filiais][produtos];
+	
+	exibir_cabecalho();
+	
+	for(int i=0; i<filiais; i++){
+		cout << "Filial " << i+1 << endl;
+		for (int j=0; j<produtos;j++){
+			cout << "Quantidade Produto " << (char)('A'+j) << ": ";
+            cin >> matriz[i][j];
+		}
+		exibir_cabecalho();
+	}
+	
+    cout << setw(8) << "Produto"; 
+    for (char c = 'A'; c < 'A' + produtos; c++) {
+        cout << setw(6) << c << " ";  
+    }
+    cout << endl;
+
+    
+    for (int i = 0; i < filiais; i++) {
+        cout << setw(8) << "Filial " << i + 1; 
+        for (int j = 0; j < produtos; j++) {
+            cout << setw(6) << matriz[i][j] << " "; 
+        }
+        cout << endl;
+    }
+    
+    cout << endl;
+    
+    for (int i = 0; i < filiais; i++) {
+    	int somaFilial = 0;
+        for (int j = 0; j < produtos; j++) {
+            somaFilial += matriz[i][j];
+        }
+        cout << "Total de Produtos Filial " << i+1 << " : " << somaFilial << endl;
+    }
+    
+    cout << endl;
+    
+    for (int i = 0; i < produtos; i++) {
+    	int somaProdutos =0;
+        for (int j = 0; j < filiais; j++) {
+            somaProdutos += matriz[j][i];
+        }
+        cout << "Total de Produtos " << (char)('A'+i) << " : " << somaProdutos << endl;
+    }
+    
+	
+	SetConsoleOutputCP(CP_UTF8);
+
+	return 0;	
+}
+
+
+
+
