@@ -47,6 +47,8 @@ void exibir_cabecalho(){
 
 int main() 
 {
+	SetConsoleOutputCP(CP_UTF8);
+		
 	int matriz[filiais][produtos];
 	
 	exibir_cabecalho();
@@ -64,25 +66,43 @@ int main()
     for (char c = 'A'; c < 'A' + produtos; c++) {
         cout << setw(6) << c << " ";  
     }
+    cout << setw(8) << "Total"; 
+    
     cout << endl;
 
     
     for (int i = 0; i < filiais; i++) {
+    	int somaFilial = 0;
         cout << setw(8) << "Filial " << i + 1; 
         for (int j = 0; j < produtos; j++) {
-            cout << setw(6) << matriz[i][j] << " "; 
+            cout << setw(6) << matriz[i][j] << " ";
+            somaFilial += matriz[i][j];
         }
+        cout << "\033[1;33m" << setw(6) << somaFilial << "\033[0m";
         cout << endl;
     }
+    cout << setw(8) << "Total" << " ";
+    int total=0;
+    for (int i = 0; i < produtos; i++) {
+    	int somaProdutos =0;
+        for (int j = 0; j < filiais; j++) {
+            somaProdutos += matriz[j][i];
+            total += matriz[j][i];
+        }
+        cout << "\033[1;33m" << setw(6) << somaProdutos << " " << "\033[0m";
+    }
     
+    cout << setw(6) << total;
     cout << endl;
+    
+    cout << endl << endl;
     
     for (int i = 0; i < filiais; i++) {
     	int somaFilial = 0;
         for (int j = 0; j < produtos; j++) {
             somaFilial += matriz[i][j];
         }
-        cout << "Total de Produtos Filial " << i+1 << " : " << somaFilial << endl;
+        cout << "Total de Produtos Filial " << i+1 << ": " << somaFilial << endl;
     }
     
     cout << endl;
@@ -92,15 +112,10 @@ int main()
         for (int j = 0; j < filiais; j++) {
             somaProdutos += matriz[j][i];
         }
-        cout << "Total de Produtos " << (char)('A'+i) << " : " << somaProdutos << endl;
+        cout << "Total de Produtos " << (char)('A'+i) << ": " << somaProdutos << endl;
     }
     
-	
-	SetConsoleOutputCP(CP_UTF8);
-
+    cout << endl << endl;
+	system("Pause");
 	return 0;	
 }
-
-
-
-
