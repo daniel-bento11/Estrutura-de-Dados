@@ -26,7 +26,7 @@ Este repositório contém anotações, códigos e exercícios desenvolvidos em *
 
 ## 📊 Progresso do Repositório
 
-![Progresso do Repositório](https://img.shields.io/badge/Progresso-70%25-blue?style=for-the-badge)
+![Progresso do Repositório](https://img.shields.io/badge/Progresso-40%25-blue?style=for-the-badge)
 
 ---
 
@@ -138,9 +138,11 @@ Este repositório contém anotações, códigos e exercícios desenvolvidos em *
 
 ## 🚀 Meu Perfil
 
-<img src="https://github.com/daniel-bento11.png" alt="GitHub Profile" width="120" height="120" style="border-radius: 50%;"/>
+<div style="display: flex; align-items: center;">
+  <img src="https://github.com/daniel-bento11.png" alt="GitHub Profile" width="120" height="120" style="border-radius: 50%; margin-right: 10px;"/>
+  <span><strong>Daniel Velluto Bento</strong></span>
+</div>
 
-**Daniel Velluto Bento**
 [🔗 Acesse meu GitHub](https://github.com/daniel-bento11)
 
 ---
