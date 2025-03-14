@@ -13,7 +13,20 @@ Este repositório contém anotações, códigos e exercícios desenvolvidos em *
 ## 🛠️ Tecnologias Utilizadas
 
 ![C++](https://img.shields.io/badge/C++-blue?style=for-the-badge&logo=cplusplus)
-![Fatec Araraquara](https://img.shields.io/badge/Fatec-Araraquara-red?style=for-the-badge)
+![Git](https://img.shields.io/badge/Git-black?style=for-the-badge&logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
+
+---
+
+## 🏫 Instituição de Ensino
+
+[![Fatec Araraquara](https://img.shields.io/badge/Fatec-Araraquara-red?style=for-the-badge)](https://fatecararaquara.cps.sp.gov.br/)
+
+---
+
+## 📊 Progresso do Repositório
+
+![Progresso do Repositório](https://img.shields.io/badge/Progresso-70%25-blue?style=for-the-badge)
 
 ---
 
@@ -26,12 +39,6 @@ Este repositório contém anotações, códigos e exercícios desenvolvidos em *
 - 🔹 Árvores
 - 🔹 Algoritmos de Ordenação
 - 🔹 Algoritmos de Busca
-
----
-
-## 📊 Progresso do Repositório
-
-![Progresso do Repositório](https://progress-bar.dev/70/?title=Progresso)
 
 ---
 
@@ -131,8 +138,9 @@ Este repositório contém anotações, códigos e exercícios desenvolvidos em *
 
 ## 🚀 Meu Perfil
 
-![GitHub Profile](https://github.com/daniel-bento11.png)
+<img src="https://github.com/daniel-bento11.png" alt="GitHub Profile" width="120" height="120" style="border-radius: 50%;"/>
 
+**Daniel Velluto Bento**
 [🔗 Acesse meu GitHub](https://github.com/daniel-bento11)
 
 ---
