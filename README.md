@@ -138,9 +138,9 @@ Este repositório contém anotações, códigos e exercícios desenvolvidos em *
 
 ## 🚀 Meu Perfil
 
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+<div style="text-align: center;">
   <img src="https://github.com/daniel-bento11.png" alt="GitHub Profile" width="120" height="120" style="border-radius: 50%;"/>
-  <span style="margin-top: 10px; font-weight: bold; font-size: 18px;">Daniel Velluto Bento</span>
+  <div style="font-weight: bold; font-size: 18px; margin-top: 10px;">Daniel Velluto Bento</div>
 </div>
 
 [🔗 Acesse meu GitHub](https://github.com/daniel-bento11)
