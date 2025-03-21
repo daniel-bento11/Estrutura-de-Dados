@@ -51,7 +51,7 @@ float solicitar_e_verificar_valor_float(string texto){
 		}
 		
 		if(valor <=0){
-			cout << "Impossível existir media menor ou igual a 0!" << endl;
+			cout << "Medida deve ser maior que 0!" << endl;
 			system("pause");
 			continue;
 		}
