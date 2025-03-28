@@ -1,0 +1,58 @@
+/*Exercicio4-
+Sistema de Gerenciamento de Contas Bancárias.
+
+O programa deve permitir o cadastro, exclusão, consulta 
+de saldo, visualização de todas as contas, saques e depósitos. 
+Utilize structs para armazenar as informações das contas e 
+implemente as funcionalidades usando funções.
+
+Struct ContaBancaria
+- numeroConta (inteiro)
+- nomeCliente (string)
+- saldo (double)
+
+Declare um array estático de structs ContaBancaria 
+para armazenar até 10 contas.
+
+Menu de Opções
+1.  Cadastrar Contas
+2.  Excluir Contas
+3.  Consultar Saldo
+4.  Visualizar Todas as Contas (número,nome e saldo)
+5.  Saque da Conta
+6.  Depósito em Conta
+7.  Sair
+
+Funcionalidades:
+1.Cadastrar Contas:
+	Solicite o nome do cliente e o saldo inicial.
+	Gere automaticamente um número de conta sequencial.
+	Adicione a conta ao array.
+	Limite o cadastro a 10 contas.
+
+2.Excluir Contas:
+	Solicite o número da conta a ser excluída.
+	Remova a conta do array.
+	Trate o caso de conta não encontrada.
+	
+3.Consultar Saldo:
+	Solicite o número da conta.
+	Exiba o saldo da conta.
+	Trate o caso de conta não encontrada.
+	
+4.Visualizar Todas as Contas:
+	Exiba todas as contas cadastradas no formato: 
+	número da conta, nome do cliente e saldo.
+
+5.Saque da Conta:
+	Solicite o número da conta e o valor do saque.
+	Verifique se há saldo suficiente.
+	Atualize o saldo da conta.
+	Trate o caso de conta não encontrada e saldo 
+	insuficiente.
+
+6.Depósito em Conta:
+	Solicite o número da conta e o valor do depósito.
+	Atualize o saldo da conta.
+	Trate o caso de conta não encontrada.
+*/

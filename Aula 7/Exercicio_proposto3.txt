@@ -1,0 +1,35 @@
+/*Exercicio3-
+Crie um programa que gerencie os dados de 
+funcionários de uma empresa. 
+
+Funcionalidades:
+1. Cadastro de Funcionário:
+Permitir o cadastro de novos funcionários, armazenando 
+as seguintes informações:
+Nome (string)
+Código (inteiro)
+Idade (inteiro)
+Salário (float)
+
+Declare um array estático de structs para armazenar até 
+10 contas.
+Exibir uma mensagem de sucesso após o cadastro ou uma 
+mensagem de erro caso o limite máximo seja atingido.
+
+2. Consulta de Funcionário:
+Permitir a consulta de um funcionário pelo seu código.
+Exibir os dados do funcionário consultado:
+Nome  Código  Idade  Salário (com duas casas decimais).
+Exibir uma mensagem caso o funcionário não seja encontrado.
+
+3. Remoção de Funcionário:
+Permitir a remoção de um funcionário pelo seu código.
+Exibir uma mensagem de sucesso após a remoção ou uma 
+mensagem de erro caso o funcionário não seja encontrado.
+
+4. Listagem de Funcionários:
+istar todos os funcionários cadastrados em formato de 
+tabela, exibindo as mesmas informações da consulta.
+Exibir uma mensagem caso não haja funcionários 
+cadastrados.
+*/
