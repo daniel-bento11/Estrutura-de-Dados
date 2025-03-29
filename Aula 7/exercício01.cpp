@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+//Declaração variáveis Globais
 struct Funcionario{
 	int codigo;
 	string nome;
@@ -16,6 +18,8 @@ Funcionario funcionarios[maxFunc];
 int nmr_funcionarios_cadastrados = 0;
 int id_cadastrados = 0;
 
+
+//Funções
 void exibir_header(string texto){
 	system("cls");
 	cout << texto << endl;
@@ -70,8 +74,8 @@ void cadastrar_func(string nome, int idade, double salario){
 	funcionarios[nmr_funcionarios_cadastrados].idade = idade;
 	funcionarios[nmr_funcionarios_cadastrados].salario = salario;
 	
-	id_cadastrados = id_cadastrados + 1 ;
-	nmr_funcionarios_cadastrados = nmr_funcionarios_cadastrados + 1;
+	id_cadastrados++;
+	nmr_funcionarios_cadastrados++;
 
 	exibir_header("Funcionário Cadastrado com Sucesso!");
 }
@@ -94,10 +98,55 @@ void exibir_funcionarios(){
 }
 
 
+int pesquisar_funcionario(int id){
+		for (int i =0; i<nmr_funcionarios_cadastrados;i++){
+		if(funcionarios[i].codigo == id){
+			return i;
+		}
+	}
+	exibir_header("Nenhum Funcionário Encontrado com o Código " + to_string(id) + "!");
+	return 10;
+}
+
+void exibir_funcionario_pesquisado(int id){
+		int funcionario = pesquisar_funcionario(id);
+		
+		if (funcionario != 10){
+			exibir_header("Funcionário Encontrado!");
+	
+			cout << setw(10) << left << "Código" << setw(20) << left << "Nome" 
+		    << setw(10) << left << "Idade" << setw(15) << left << "Salário (R$)" << endl;
+	    	cout << "------------------------------------------------------------" << endl;
+	    			
+				cout << setw(10) << left << funcionarios[funcionario].codigo
+	            << setw(20) << left << funcionarios[funcionario].nome
+	            << setw(10) << left << funcionarios[funcionario].idade
+	            << setw(15) << left << fixed << setprecision(2) 
+				<< funcionarios[funcionario].salario << endl;
+				 	
+			cout << "------------------------------------------------------------" << endl << endl;
+		}
+}
+
+void excluir_funcionario(int id){
+	int funcionario = pesquisar_funcionario(id);
+	
+	if(funcionario != 10){
+		string nome_funcionario = funcionarios[funcionario].nome;
+		for(int i = funcionario+1; i<nmr_funcionarios_cadastrados; i++){
+			funcionarios[i-1]=funcionarios[i];
+		}
+		nmr_funcionarios_cadastrados--;
+		exibir_header("Funcionário " + nome_funcionario + " Excluído com Sucesso!");
+		
+	}
+}
+
+//Programa Principal
 int main(){
 	
 	SetConsoleOutputCP(CP_UTF8);
-	int opt, idade;
+	int opt, idade, id;
 	double salario;
 	string nome;
 	
@@ -136,10 +185,36 @@ int main(){
 			system("pause");
 			break;
 		
+		case 2:
+			if (nmr_funcionarios_cadastrados>0){
+				exibir_header("Pesquisar Funcionário");
+				id = pegar_valor("Informe o Código do Funcionário: ");
+				exibir_funcionario_pesquisado(id);
+			}
+			else{
+				exibir_header("Nenhum Funcionário Cadastrado!");
+			}
+			
+			system("pause");
+			break;
+		
+		case 3:
+			if(nmr_funcionarios_cadastrados>0){
+				exibir_header("Excluir Funcionário");
+				id = pegar_valor("Informe o Código do Funcionário: ");
+				excluir_funcionario(id);
+			}
+			else{
+				exibir_header("Nenhum Funcionário Cadastrado!");
+			}
+			
+			system("pause");
+			break;
+		
 		case 4:
 			if (nmr_funcionarios_cadastrados>0){
 				
-				exibir_header("Usuários Cadastrados");
+				exibir_header("Funcionários Cadastrados");
 				exibir_funcionarios();
 			}
 			else{
