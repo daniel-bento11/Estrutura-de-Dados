@@ -105,7 +105,7 @@ int pesquisar_funcionario(int id){
 		}
 	}
 	exibir_header("Nenhum Funcionário Encontrado com o Código " + to_string(id) + "!");
-	return 10;
+	return maxFunc;
 }
 
 void exibir_funcionario_pesquisado(int id){
