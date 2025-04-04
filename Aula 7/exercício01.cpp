@@ -55,9 +55,10 @@ double pegar_valor(string mensagem){
 
 string pegar_string(string mensagem){
 	string valor;
+	
 	while(true){
-		cout << mensagem;
 		cin.ignore();
+		cout << mensagem;
 		getline(cin,valor);
 		if (!valor.empty()){
 			return valor;
@@ -111,7 +112,7 @@ int pesquisar_funcionario(int id){
 void exibir_funcionario_pesquisado(int id){
 		int funcionario = pesquisar_funcionario(id);
 		
-		if (funcionario != 10){
+		if (funcionario != maxFunc){
 			exibir_header("Funcionário Encontrado!");
 	
 			cout << setw(10) << left << "Código" << setw(20) << left << "Nome" 
@@ -131,12 +132,14 @@ void exibir_funcionario_pesquisado(int id){
 void excluir_funcionario(int id){
 	int funcionario = pesquisar_funcionario(id);
 	
-	if(funcionario != 10){
+	if(funcionario != maxFunc){
 		string nome_funcionario = funcionarios[funcionario].nome;
-		for(int i = funcionario+1; i<nmr_funcionarios_cadastrados; i++){
-			funcionarios[i-1]=funcionarios[i];
-		}
+		for(int i = funcionario; i<nmr_funcionarios_cadastrados; i++){
+			funcionarios[i]=funcionarios[i+1];
+		}              
+		
 		nmr_funcionarios_cadastrados--;
+		funcionarios[nmr_funcionarios_cadastrados] = {};
 		exibir_header("Funcionário " + nome_funcionario + " Excluído com Sucesso!");
 		
 	}
