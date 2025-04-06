@@ -134,7 +134,7 @@ void excluir_funcionario(int id){
 	
 	if(funcionario != maxFunc){
 		string nome_funcionario = funcionarios[funcionario].nome;
-		for(int i = funcionario; i<nmr_funcionarios_cadastrados; i++){
+		for(int i = funcionario; i<nmr_funcionarios_cadastrados-1; i++){
 			funcionarios[i]=funcionarios[i+1];
 		}              
 		

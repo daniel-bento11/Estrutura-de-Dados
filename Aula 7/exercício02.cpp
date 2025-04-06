@@ -157,7 +157,7 @@ void excluir_conta(int id){
 	
 	if(conta != maxCont){
 		string nomeCliente = contas[conta].nomeCliente;
-		for(int i = conta; i<nmr_contas_cadastrados; i++){
+		for(int i = conta; i<nmr_contas_cadastrados-1; i++){
 			contas[i]=contas[i+1];
 		}              
 		
