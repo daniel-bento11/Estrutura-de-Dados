@@ -48,7 +48,6 @@ bool verificar_existencia(int valor){
 		No* atual = first;
 		while (atual != nullptr){
 			if(atual->valor == valor){
-				exibir_header("Valor já cadastrado!");
 				return false;
 			}
 			atual=atual->proximo;
@@ -96,10 +95,8 @@ void encadear_no(No* newNo){
 void excluir_no(int valor){
 	No* atual = first;
 	No* anterior = nullptr;
-	bool achou = false;
 	while (atual != nullptr){
 		if(atual->valor == valor){
-			achou = true;
 			if (atual==first){
 				first = atual->proximo;
 				delete atual;
@@ -115,9 +112,6 @@ void excluir_no(int valor){
 		}
 		anterior = atual;
 		atual = atual->proximo;
-	}
-	if (!achou){
-		exibir_header("Valor não encontrado!");
 	}
 }
 
@@ -164,6 +158,8 @@ int main(){
 				if(verificar_existencia(valor)){
 					encadear_no(criar_no(valor));
 					exibir_header("Nó criado com sucesso!");
+				}else{
+					exibir_header("Valor já Cadastrado!");
 				}
 				
 				system("pause");
@@ -181,8 +177,12 @@ int main(){
 				if (first != nullptr){
 					exibir_header("Excluir Valor!");
 					valor = pegar_valor("Informe o Valor: ");
+					if(!verificar_existencia(valor)){
+						excluir_no(valor);
+					}else{
+						exibir_header("Valor não Encontrado!");
+					}
 					
-					excluir_no(valor);
 				}else{
 					exibir_header("Nenhum nó Cadastrado!");
 				}
