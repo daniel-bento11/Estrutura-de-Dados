@@ -1,0 +1,73 @@
+#=========================================
+### Exercicio1-Programa de Lista Encadeada
+
+Criação e manipulação básica de uma lista 
+encadeada simples. 
+
+Funcionalidades:
+================
+
+#Definição da Estrutura do Nó:
+valor:inteiro.
+proximo:ponteiro.
+
+#Função para Criar um Novo Nó:
+Esta função recebe um valor inteiro como 
+parâmetro e aloca dinamicamente a memória 
+para um novo nó (new No).
+O campo valor do novo nó é inicializado com 
+o valor fornecido.
+O campo proximo do novo nó é inicializado 
+com nullptr, indicando que, inicialmente, 
+este nó não está conectado a nenhum outro.
+A função retorna o ponteiro para o novo nó 
+criado.
+
+#Função para Exibir a Lista Encadeada:
+Esta função recebe um ponteiro para o 
+primeiro nó da lista cabeca como parâmetro.
+Ela percorre a lista nó por nó, começando 
+pela cabeça e realiza as ações conforme o 
+exemplo dado.
+
+#Programa Principal:
+====================
+
+*Criação da Lista Inicial:
+Três nós são criados utilizando a função 
+de criação de nós com os valores 25, 15 e 
+35,respectivamente.
+
+*Os ponteiros proximo são utilizados 
+para conectar esses nós na seguinte 
+ordem: 25 -> 15 -> 35 -> NULL. 
+
+*As variáveis primeiro, segundo e 
+terceiro armazenam os ponteiros para 
+esses nós.
+
+*Exibição da Lista Original:
+A função para exibir a lista é chamada 
+com o ponteiro para o primeiro nó. 
+
+*Criação do Novo Nó para Inserção:
+Um novo nó é criado com o valor 20. 
+Este é o nó que será inserido na 
+lista existente.
+
+Localização do Ponto de Inserção:
+conforme o exemplo dado.
+
+Inserção do Novo Nó:
+conforme o exemplo dado
+
+Exibição da Lista Atualizada:
+conforme o exemplo dado
+
+#==========================================
+### Exercicico2 - Versão do exercicio1 com 
+entrada de dados.
+
+#==========================================
+### Exercicico3 - Versão do exercicio2 com 
+remoção de um nó determinado.*/

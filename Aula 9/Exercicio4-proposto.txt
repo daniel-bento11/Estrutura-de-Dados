@@ -1,0 +1,51 @@
+/*Exercicico4 - Lista Encadeada com Menu de Opções*/
+/*Elabore um programa que implemente uma lista 
+encadeada simples desordenada e ofereça um menu 
+interativo com as seguintes opções:
+    1. Inserir na sequência (no final)
+    2. Inserir no início
+    3. Inserir após um nó específico
+    4. Remover um nó em qualquer lugar
+    5. Exibir lista
+    6. Sair
+
+## Inserir na sequência (no final) ## 
+Permite ao usuário adicionar um novo nó contendo 
+um valor inteiro ao final da lista encadeada. 
+Os elementos não precisam ser inseridos em ordem 
+específica.
+
+## Inserir no início ## 
+Permite ao usuário adicionar um novo nó contendo 
+um valor inteiro no início da lista encadeada. 
+A ordem dos elementos existentes não é alterada.
+
+## Inserir após um nó específico ## 
+Solicita ao usuário um valor a ser inserido e o 
+valor de um nó existente na lista. O novo nó deve 
+ser inserido após o primeiro nó encontrado com o 
+valor especificado, sem considerar a ordenação. 
+Caso o nó com o valor especificado não seja 
+encontrado, uma mensagem de erro deve ser exibida.
+
+## Remover um nó em qualquer lugar ## 
+Solicita ao usuário o valor do nó a ser removido 
+da lista. Se o nó com o valor especificado for 
+encontrado, ele deve ser removido, independentemente 
+de sua posição e sem manter qualquer ordenação. 
+Caso contrário, uma mensagem informando que o valor 
+não foi encontrado deve ser exibida.
+
+## Exibir lista ## 
+Exibe todos os valores presentes na lista encadeada 
+na ordem em que foram inseridos, indicando claramente 
+o início e o fim da lista (NULL). Se a lista estiver 
+vazia, uma mensagem apropriada deve ser mostrada.
+
+## Sair ## 
+Encerra a execução do programa, liberando toda a 
+memória alocada para a lista encadeada antes de 
+finalizar, ou seja, deletando todos os nós, caso
+a lista ainda tenha algum nó.*/
+
+

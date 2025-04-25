@@ -165,7 +165,6 @@ int main(){
 				system("pause");
 				break;
 			case 2:
-				
 				if (first != nullptr){
 					exibir_nos();
 				}else{
@@ -189,8 +188,8 @@ int main(){
 				system("pause");
 				break;
 			default:
-			exibir_header("Opção Inválida!");
-			system("pause");
+				exibir_header("Opção Inválida!");
+				system("pause");
 		}
 		
 		
