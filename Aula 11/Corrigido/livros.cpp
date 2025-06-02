@@ -10,10 +10,6 @@ struct Livro{
 	Livro* proximo;
 };
 
-Livro* Pilha1 = new Livro;
-Livro* Pilha2= new Livro;
-Livro* Fila = new Livro;
-
 Livro* topo1 = nullptr;
 Livro* topo2 = nullptr;
 Livro* fila_inicio = nullptr;
@@ -26,7 +22,7 @@ int qtdP2= 0;
 void exibir_menu(){
 	cout << "1. Inserir Livro" << endl;
 	cout << "2. Retirar Livro" << endl;
-	cout << "3. Exibir Pratileiras" << endl;
+	cout << "3. Exibir Prateleiras" << endl;
 	cout << "4. Sair" << endl << endl;
 }
 
@@ -71,12 +67,12 @@ string pegar_string(string mensagem){
 	}
 }
 
-bool verificar_existencia(int cod, Livro* pratileira){
-	while (pratileira!=nullptr){
-		if (pratileira->cod==cod){
+bool verificar_existencia(int cod, Livro* prateleira){
+	while (prateleira!=nullptr){
+		if (prateleira->cod==cod){
 			return true;
 		}else{
-			pratileira=pratileira->proximo;
+			prateleira=prateleira->proximo;
 		}
 	}
 	return false;
@@ -149,7 +145,34 @@ void exibir_fila(){
 	}
 }
 
+Livro* remover_livro(Livro* topo, int pilha_numero) {
+    if (topo == nullptr) {
+        exibir_header("Pilha Vazia!");
+    } else {
+        exibir_header("Livro Removido");
+        cout << topo->cod << ". " << topo->nome << " REMOVIDO\n\n";
+        topo = pop(topo);
+        if (fila_inicio != nullptr) {
+            topo = push(topo, criar_livro(fila_inicio->cod, fila_inicio->nome));
+            cout << fila_inicio->cod << ". " << fila_inicio->nome 
+                 << " Removido da Espera e Adicionado na Prateleira " 
+                 << pilha_numero << "\n\n";
+            dequeue();
+        }
+    }
+    return topo;
+}
 
+Livro* limpar_memoria(Livro* prateleira){
+	Livro* atual = prateleira;
+	Livro* temp = nullptr;
+	while (atual!=nullptr){
+		temp = atual;
+		atual = atual->proximo;
+		delete temp;
+	}
+	return atual;
+}
 
 int main(){
 
@@ -157,7 +180,7 @@ int main(){
 	int opt, cod, pilha;
 	string nome;
 	do{
-		exibir_header("Pratileiras de Livro");
+		exibir_header("Prateleiras de Livro");
 		exibir_menu();
 		cout << "O que deseja fazer?" << endl;
 		cin >> opt;
@@ -183,15 +206,15 @@ int main(){
 					nome = pegar_string("Informe o Nome do Livro: ");
 					if (qtdP1<max){
 						topo1=push(topo1, criar_livro(cod, nome));
-						exibir_header("Livro Adicionado na Primeira Pratileira");
+						exibir_header("Livro Adicionado na Primeira Prateleira");
 						qtdP1++;
 					}else if(qtdP2<max){
 						topo2 = push(topo2, criar_livro(cod, nome));
-						exibir_header("Livro Adicionado na Segunda Pratileira");
+						exibir_header("Livro Adicionado na Segunda Prateleira");
 						qtdP2++;
 					}else{
 						enqueue(criar_livro(cod, nome));
-						exibir_header("Livro Adicionado na Espera! Pratileiras Cheias!");
+						exibir_header("Livro Adicionado na Espera! Prateleiras Cheias!");
 					}
 				}
 				break;
@@ -200,48 +223,26 @@ int main(){
 				pilha = pegar_valor("Informe a Pilha que Deseja Remover: ");
 				switch(pilha){
 					case 1:
-						if(topo1==nullptr){
-							exibir_header("Pilha Vazia!");
-						}else{
-							exibir_header("Livro Removido!");
-							qtdP1--;
-							cout << topo1->cod << ". "<< topo1->nome << " REMOVIDO" << endl << endl ;
-							topo1= pop(topo1);
-							if(fila_inicio!=nullptr){
-								topo1 = push(topo1, fila_inicio);
-								cout << fila_inicio->cod << ". " << fila_inicio->nome << " Removido da Espera e Adicionado na Primeira Pratileira" << endl << endl;
-								dequeue();
-							}
-						}
+						topo1 = remover_livro(topo1, 1);
+						qtdP1--;
 						break;
 					case 2:
-						if (topo2==nullptr){
-							exibir_header("Pilha Vazia!");
-						}else{
-							exibir_header("Livro Removido");
-							qtdP2--;
-							cout << topo2->cod << ". "<< topo2->nome  << " REMOVIDO" << endl << endl ;
-							topo2= pop(topo2);
-							if(fila_inicio!=nullptr){
-								topo2 = push(topo2, fila_inicio);
-								cout << fila_inicio->cod << ". " << fila_inicio->nome << " Removido da Espera e Adicionado na Segunda Pratileira" << endl << endl;
-								dequeue();
-							}
-						}
+						topo2 = remover_livro(topo2, 2);
+						qtdP2--;
 						break;
 					default:
 						exibir_header("Opção Inválida!");	
 				}
 				break;
 			case 3:
-				exibir_header("Pratileiras");
-				cout << "Pratileira 1" << endl;
+				exibir_header("Prateleiras");
+				cout << "Prateleira 1" << endl << endl;
 				exibir_pilha(topo1);
 				cout << "---------------------" << endl << endl;
-				cout << "Pratileira 2" << endl;
+				cout << "Prateleira 2" << endl << endl;
 				exibir_pilha(topo2);
 				cout << "---------------------" << endl << endl;
-				cout << "Fila de Espera" <<  endl;
+				cout << "Fila de Espera" <<  endl << endl;
 				exibir_fila();
 				cout << "---------------------" << endl << endl;
 				break;
@@ -251,6 +252,10 @@ int main(){
 		system("Pause");
 		
 	}while(true);
+	
+	topo1=limpar_memoria(topo1);
+	topo2=limpar_memoria(topo2);
+	fila_fim=limpar_memoria(fila_inicio);
 	exibir_header("Adeus, Volte Logo!");
 	system("Pause");
 	return 0;	
